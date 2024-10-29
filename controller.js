@@ -16,3 +16,28 @@ exports.tampilkanmahasiswa = function(req,res){
         }
     })
 }
+
+exports.tampilkanmahasiswaberdasarkanID = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM mahasiswa where id_mahasiswa=?',[id], function(error,rows, fields){
+        if(error){
+            console.log(error)
+        }else{
+            response.ok(rows[0],res);
+        }
+    })
+}
+
+exports.tambahsiswa = function(req,res){
+    let nim = req.body.nim;
+    let nama = req.body.nama;
+    let jurusan = req.body.jurusan;
+
+    connection.query('INSERT INTO mahasiswa(nim,nama,jurusan) VALUES (?,?,?)',[nim,nama,jurusan], function(error,rows, fields){
+        if(error){
+            console.log(error)
+        }else{
+            response.ok(req.body,res);
+        }
+    })
+}
