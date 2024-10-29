@@ -22,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/raizaldi/belajar_nodejs/issues"
   },
-  "homepage": "https://github.com/raizaldi/belajar_nodejs#readme"
+  "homepage": "https://github.com/raizaldi/belajar_nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "mysql": "^2.18.1"
+  }
 }
